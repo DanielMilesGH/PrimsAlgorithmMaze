@@ -42,7 +42,7 @@ class Dijkstra:
 				if not self.bias:
 					dist = currDist + weight
 				else:
-					dist = currDist + weight + math.dist(neighbor, self.end)**self.bias
+					dist = currDist + weight + self.manhattan(neighbor, self.end)**self.bias
 				# only consider if its better than other dists
 				if neighbor==self.bias:
 					bias=False
@@ -54,7 +54,8 @@ class Dijkstra:
 					self.toDraw.append((currVtx[0], currVtx[1], neighbor[0], neighbor[1]))
 
 		return distances, prevs
-
+	def manhattan(self, a, b):
+		return sum(abs(val1-val2) for val1, val2 in zip(a,b))
 if __name__ == "__main__":
 	file = open("tree.txt")
 	txt = file.read()
