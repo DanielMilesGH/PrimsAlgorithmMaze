@@ -107,7 +107,7 @@ async def main():
 			pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
 			bestCounter+=1
 		elif pathCounter < len(pathDraw):
-			# pyg.time.wait(1)
+			pyg.time.wait(1)
 	    	# Get the starting and ending coordinates of the edge
 			x1 = pathDraw[pathCounter][0] * sz + 10
 			y1 = pathDraw[pathCounter][1] * sz + 10
@@ -130,6 +130,23 @@ async def main():
 			y2 = pathDrawB[pathCounter][3] * sz + 10
 			pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
 			pathCounter+=1
+			# draw the best path
+			for i in range(len(bestPath)):
+				x1 = bestPath[i][0] * sz + 10
+				y1 = bestPath[i][1] * sz + 10
+				x2 = bestPath[i][2] * sz + 10 
+				y2 = bestPath[i][3] * sz + 10
+				color = (255,255,0)
+
+				pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
+
+				x1 = bestPath[i][0] * sz + 10 + 750
+				y1 = bestPath[i][1] * sz + 10
+				x2 = bestPath[i][2] * sz + 10 + 750
+				y2 = bestPath[i][3] * sz + 10
+				color = (255,255,0)
+
+				pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
 
 
 		if genCounter%40==0:
