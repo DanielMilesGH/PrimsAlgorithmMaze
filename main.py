@@ -107,7 +107,7 @@ async def main():
 			pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
 			bestCounter+=1
 		elif pathCounter < len(pathDraw):
-			pyg.time.wait(1)
+# 			pyg.time.wait(1)
 	    	# Get the starting and ending coordinates of the edge
 			x1 = pathDraw[pathCounter][0] * sz + 10
 			y1 = pathDraw[pathCounter][1] * sz + 10
