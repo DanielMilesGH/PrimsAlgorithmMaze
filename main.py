@@ -142,14 +142,14 @@ async def main():
 				y2 = bestPath[i][3] * sz + 10
 				color = (255,255,0)
 
-				pyg.draw.line(test.WINDOW, (17, 168, 0), (x1, y1), (x2, y2), 3)
+				pyg.draw.line(test.WINDOW, (17, 255, 0), (x1, y1), (x2, y2), 3)
 
 				x1 = bestPath[i][0] * sz + 10 + 750
 				y1 = bestPath[i][1] * sz + 10
 				x2 = bestPath[i][2] * sz + 10 + 750
 				y2 = bestPath[i][3] * sz + 10
 
-				pyg.draw.line(test.WINDOW, (17, 168, 0), (x1, y1), (x2, y2), 3)
+				pyg.draw.line(test.WINDOW, (17, 255, 0), (x1, y1), (x2, y2), 3)
 
 
 		if genCounter%40==0:
