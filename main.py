@@ -103,6 +103,7 @@ async def main():
 			x2 = bestPath[bestCounter][2] * sz + 10 + 750
 			y2 = bestPath[bestCounter][3] * sz + 10
 			color = (255,255,0)
+			colorB = (255,255,0)
 
 			pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
 			bestCounter+=1
@@ -120,15 +121,18 @@ async def main():
 			if not hitBias:
 				if (pathDraw[pathCounter][0], pathDraw[pathCounter][1]) == randomEnd:
 					hitBias=True
-			if hitBias:
-				color = (200,100,100)
-
+			if not hitBiasB:
+				if (pathDrawB[pathCounter][0], pathDrawB[pathCounter][1]) == randomEnd:
+					hitBiasB=True
+			if hitBiasB:
+				colorB = (200,100,100)
+			
 			pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
 			x1 = pathDrawB[pathCounter][0] * sz + 10 + 750
 			y1 = pathDrawB[pathCounter][1] * sz + 10
 			x2 = pathDrawB[pathCounter][2] * sz + 10 + 750
 			y2 = pathDrawB[pathCounter][3] * sz + 10
-			pyg.draw.line(test.WINDOW, color, (x1, y1), (x2, y2), 3)
+			pyg.draw.line(test.WINDOW, colorB, (x1, y1), (x2, y2), 3)
 			pathCounter+=1
 			# draw the best path
 			for i in range(len(bestPath)):
